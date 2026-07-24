@@ -3,7 +3,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class SelectStatement {
+public class SelectStatement2 {
 
 	public static void main(String[] args)  throws Exception
 	{
@@ -16,7 +16,7 @@ public class SelectStatement {
 //				+ "FROM employeeupgrad";
 		
 		
-		String query="SELECT ename, eage FROM employeeupgrad";
+		String query="SELECT eage,ename  FROM employeeupgrad";
 		
 		Statement st=connection.createStatement();
 		
@@ -24,7 +24,7 @@ public class SelectStatement {
 		
 		while(rs.next())
 		{
-			System.out.println(rs.getString(1) + " " + rs.getInt(2));
+			System.out.println(rs.getString("ename") + " " + rs.getInt("eage"));
 		}
 		
 		st.close();
